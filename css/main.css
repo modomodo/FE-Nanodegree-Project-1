@@ -1,0 +1,47 @@
+/****************
+ GENERAL STYLES
+****************/
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: #747704;
+}
+
+main {
+  padding-top: 2%;
+  background-color: #e2dbbe;
+}
+
+.text-thin{
+  font-weight: 100;
+}
+
+.text-muted {
+  color: #bcbbbb;
+}
+
+.text-super {
+  font-size: 4.285714em;
+}
+
+/****************
+ NAVIGATON STYLES
+****************/
+
+nav .container{
+  background-color: #392F5A;
+  border-bottom: thick solid #bcbbbb;
+}
+
+.title-logo {
+  max-height: 100%;
+  width: 20%;
+  min-width: 115px;
+  float: left;
+}
+
+
+/********************
+ FEATURED WORK STYLES
+*********************/
