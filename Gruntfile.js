@@ -1,12 +1,6 @@
-/*
- After you have changed any settings for the responsive_images task,
- run this with one of these options:
-  "grunt" alone creates a new, completed images directory
-  "grunt clean" removes the images directory
-  "grunt responsive_images" re-processes images without removing the old ones
-*/
+var pngquant = require('imagemin-pngquant');
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
@@ -16,19 +10,18 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     responsive_images: {
-      dev: {
+      dist: {
         options: {
           engine: 'im',
           sizes: [{
-            width: 1600,
-            suffix: '@2x',
-            quality: 30
+            width: 1280,
+            suffix: '@2x'
           }]
         },
         files: [{
           expand: true,
           src: ['*.{gif,jpg,png}'],
-          cwd: 'src/img',
+          cwd: 'dist/img',
           dest: 'dist/img'
         }]
       }
@@ -36,33 +29,31 @@ module.exports = function(grunt) {
 
     /* Clear out the images directory if it exists */
     clean: {
-      dev: {
-        src: ['dist/'],
-      },
+      src: ['dist/']
     },
 
-    /* Generate the images directory if it is missing */
-    mkdir: {
-      dev: {
+    imagemin: {
+      dist: {
         options: {
-          create: ['images']
+          optimizationLevel: 5,
+          svgoPlugins: [{removeViewBox: false}],
+          use: [pngquant({
+            quality: '75'
+          })]
         },
-      },
-    },
-
-    /* Copy the "fixed" images that don't go through processing into the images/directory */
-    copy: {
-      dev: {
         files: [{
           expand: true,
-          src: ['src/img/*.{gif,jpg,png}'],
-          dest: 'images/',
-          flatten: true,
+          cwd: 'src/img',
+          src: ['**/*.{png,jpg,gif,svg}'],
+          dest: 'dist/img/'
         }]
-      },
+      }
     },
+
+    jshint: {
+      src: 'Gruntfile.js'
+    }
   });
 
-  grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images']);
-
+  grunt.registerTask('default', ['jshint', 'clean', 'imagemin', 'responsive_images']);
 };

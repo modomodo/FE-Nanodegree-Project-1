@@ -7,12 +7,15 @@
   "devDependencies": {
     "grunt": "*",
     "grunt-contrib-clean": "*",
-    "grunt-contrib-copy": "*",
     "grunt-contrib-imagemin": "*",
-    "grunt-mkdir": "*",
+    "grunt-contrib-jshint": "*",
     "grunt-responsive-images": "*",
+    "imagemin-pngquant": "*",
     "load-grunt-config": "*",
-    "time-grunt": "*",
-    "load-grunt-tasks": "*"
+    "load-grunt-tasks": "*",
+    "time-grunt": "*"
+  },
+  "dependencies": {
+    "time-grunt": "*"
   }
 }
