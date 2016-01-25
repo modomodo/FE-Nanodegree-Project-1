@@ -9,9 +9,10 @@
     "grunt-contrib-clean": "*",
     "grunt-contrib-imagemin": "*",
     "grunt-contrib-jshint": "*",
+    "grunt-contrib-copy": "*",
     "grunt-responsive-images": "*",
+    "imagemin-jpegtran": "*",
     "imagemin-pngquant": "*",
-    "load-grunt-config": "*",
     "load-grunt-tasks": "*",
     "time-grunt": "*"
   },

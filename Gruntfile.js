@@ -1,27 +1,44 @@
-var pngquant = require('imagemin-pngquant');
+var pngquant = require('imagemin-pngquant'),
+jpegtran = require('imagemin-jpegtran');
 
 module.exports = function (grunt) {
 
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
-  require('load-grunt-config')(grunt, {
-    jitGrunt: true
-  });
 
   grunt.initConfig({
+    copy: {
+      main: {
+        src: 'src/img/udacity_logo.svg',
+        dest: 'dist/img/udacity_logo.svg'
+      }
+    },
+
     responsive_images: {
-      dist: {
+      responsive: {
         options: {
           engine: 'im',
           sizes: [{
             width: 1280,
+            sharpen: {
+              sigma: 1,
+              radius: 2
+            },
+            rename: false,
             suffix: '@2x'
+          }, {
+            width: 768,
+            sharpen: {
+              sigma: 1,
+              radius: 2
+            },
+            rename: false
           }]
         },
         files: [{
           expand: true,
           src: ['*.{gif,jpg,png}'],
-          cwd: 'dist/img',
+          cwd: 'src/img',
           dest: 'dist/img'
         }]
       }
@@ -35,15 +52,17 @@ module.exports = function (grunt) {
     imagemin: {
       dist: {
         options: {
-          optimizationLevel: 5,
+          optimizationLevel: 6,
           svgoPlugins: [{removeViewBox: false}],
           use: [pngquant({
             quality: '75'
+          }), jpegtran({
+            progressive: true
           })]
         },
         files: [{
           expand: true,
-          cwd: 'src/img',
+          cwd: 'dist/img',
           src: ['**/*.{png,jpg,gif,svg}'],
           dest: 'dist/img/'
         }]
@@ -55,5 +74,5 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('default', ['jshint', 'clean', 'imagemin', 'responsive_images']);
+  grunt.registerTask('default', ['jshint', 'clean', 'copy', 'responsive_images', 'imagemin']);
 };
