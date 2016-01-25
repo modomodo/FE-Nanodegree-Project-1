@@ -1,0 +1,18 @@
+{
+  "name": "p1-website",
+  "version": "1.0.0",
+  "description": "Udacity Project 1 - Build a Portfolio",
+  "author": "Michael Muita",
+  "license": "SEE LICENSE IN LICENSE",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-mkdir": "*",
+    "grunt-responsive-images": "*",
+    "load-grunt-config": "*",
+    "time-grunt": "*",
+    "load-grunt-tasks": "*"
+  }
+}
