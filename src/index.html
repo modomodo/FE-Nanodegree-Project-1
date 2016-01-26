@@ -1,63 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Muita | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Michael Muita - Software Engineer</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300%7CMontserrat:400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
 
-  <body>
-    <nav class="navbar navbar-static-top">
-      <div class="container">
-        <a href="index.html" class="pull-left">
-          <img class="title-logo" src="img/udacity_logo.svg" alt="Logo">
-        </a>
-        <a href="index.html" class="text-right text-uppercase pull-right">
-          <h1 class="text-thin">Michael Muita Mugo</h1>
-          <h4>Full-Stack Dan</h4>
-        </a>
+<body>
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-target="#collapse-menu" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">Michael Muita</a>
       </div>
-    </nav>
 
-    <main class="container">
-      <img class="img-responsive img-rounded center-block img-thumbnail" src="img/nbi-night_for_web.jpg" alt="Featured Image">
-      <h2 class="text-muted"><strong>Featured Work</strong></h2>
+      <div class="collapse navbar-collapse" id="collapse-menu">
+        <a href="https://blog.michaelmuita.me" class="btn btn-warning navbar-btn hidden-xs navbar-right">Blog</a>
+        <ul class="nav navbar-nav navbar-right text-center">
+          <li>
+            <a href="#">Portfolio</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Resume</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+          <li>
+            <a class="visible-xs blog" href="https://blog.michaelmuita.me">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-      <section class="row text-center">
-        <figure class="col-sm-4">
-          <img class="img-responsive img-rounded" src="img/african-stories.png" alt="African Stories Website">
-          <figcaption>
-            <h3 class="text-uppercase">African Short Stories</h3>
-            <a href="https://github.com/modomodo/African-Short-Stories">https://github.com/modomodo/African-Short-Stories</a>
-          </figcaption>
-        </figure>
+  <main class="container">
 
-        <figure class="col-sm-4">
-          <img class="img-responsive img-rounded" src="img/ribbit-design-page.png" alt="Ribbit Design Agency Website">
-          <figcaption>
-            <h3 class="text-uppercase">Ribbit Design Agency</h3>
-            <a href="https://github.com/modomodo/ribbit-design-agency">https://github.com/modomodo/ribbit-design-agency</a>
-          </figcaption>
-        </figure>
+    <!--Section using bootstrap carousel component -->
+    <section class="carousel slide" id="mainShowcase" data-ride="carousel">
 
-        <figure class="col-sm-4">
-          <img class="img-responsive img-rounded" src="img/bootstrap-blastoff.png" alt="Ribbit Design Agency Website">
-          <figcaption>
-            <h3 class="text-uppercase"> Blasting Off With Bootstrap</h3>
-            <a href="https://github.com/modomodo/bootstrap-blastoff">https://github.com/modomodo/bootstrap-blastoff</a>
-          </figcaption>
-        </figure>
-      </section>
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-slide-to="0" data-target="#mainShowcase" class="active"></li>
+        <li data-slide-to="1" data-target="#mainShowcase"></li>
+        <li data-slide-to="2" data-target="#mainShowcase"></li>
+      </ol>
 
-    </main>
+      <!-- Slider Content (Wrapper for slides )-->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="img/ocean.jpg"
+          srcset="img/ocean.jpg, img/ocean@2x.jpg 2x"
+          alt="Featured Image">
+        </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+        <div class="item">
+          <img src="img/mountain.jpg"
+          srcset="img/mountain.jpg, img/mountain@2x.jpg 2x"
+          alt="Featured Image">
+        </div>
+
+        <div class="item">
+          <img src="img/sunset.jpg"
+          srcset="img/sunset.jpg, img/sunset@2x.jpg 2x"
+          alt="Featured Image">
+        </div> <!-- End item -->
+      </div><!-- End inner -->
+
+      <!-- Controls -->
+      <a class="left carousel-control" data-slide="prev" href="#mainShowcase">
+        <span class="icon-prev"></span>
+      </a>
+      <a class="right carousel-control" data-slide="next" href="#mainShowcase">
+        <span class="icon-next"></span>
+      </a>
+    </section><!-- End Carousel -->
+
+    <h2 class="text-muted">
+      <strong>Featured Work</strong>
+    </h2>
+
+    <section class="row text-center featured-work">
+      <figure class="col-sm-4">
+        <img class="img-responsive img-rounded" src="img/african-stories.png" srcset="img/african-stories.png, img/african-stories@2x.png 2x" alt="African Stories Website">
+        <figcaption>
+          <h3 class="text-uppercase">African Short Stories</h3>
+          <a href="https://github.com/modomodo/African-Short-Stories">
+            https://github.com/modomodo/African-Short-Stories
+          </a>
+        </figcaption>
+      </figure>
+
+      <figure class="col-sm-4">
+        <img class="img-responsive img-rounded"
+        src="img/ribbit-design-page.png"
+        srcset="img/ribbit-design-page.png, img/ribbit-design-page@2x.png 2x"
+        alt="Ribbit Design Agency Website">
+        <figcaption>
+          <h3 class="text-uppercase">Ribbit Design Agency</h3>
+          <a href="https://github.com/modomodo/ribbit-design-agency">
+            https://github.com/modomodo/ribbit-design-agency
+          </a>
+        </figcaption>
+      </figure>
+
+      <figure class="col-sm-4">
+        <img class="img-responsive img-rounded"
+        src="img/bootstrap-blastoff.png"
+        srcset="img/bootstrap-blastoff.png, img/bootstrap-blastoff@2x.png 2x"
+        alt="Ribbit Design Agency Website">
+        <figcaption>
+          <h3 class="text-uppercase"> Blasting Off With Bootstrap</h3>
+          <a href="https://github.com/modomodo/bootstrap-blastoff">
+            https://github.com/modomodo/bootstrap-blastoff
+          </a>
+        </figcaption>
+      </figure>
+    </section>
+
+  </main>
+
+  <footer class="container">
+    <section class="row">
+      <p class="text-center">Copyright © 2016 | Michael Muita | All Rights Reserved</p>
+    </section>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
 
 </html>

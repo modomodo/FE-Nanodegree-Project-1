@@ -8,18 +8,22 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     copy: {
-      main: {
-        src: 'src/img/udacity_logo.svg',
-        dest: 'dist/img/udacity_logo.svg'
+      files: {
+        expand: true,
+        cwd: 'src/img/',
+        src: '*.svg',
+        dest: 'dist/img/',
+        flatten: true
       }
     },
 
     responsive_images: {
-      responsive: {
+      work: {
         options: {
           engine: 'im',
           sizes: [{
-            width: 1280,
+            width: 1600,
+            height: 585,
             sharpen: {
               sigma: 1,
               radius: 2
@@ -27,7 +31,8 @@ module.exports = function (grunt) {
             rename: false,
             suffix: '@2x'
           }, {
-            width: 768,
+            width: 800,
+            height: 293,
             sharpen: {
               sigma: 1,
               radius: 2
@@ -37,7 +42,37 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          src: ['*.{gif,jpg,png}'],
+          src: ['*.png'],
+          cwd: 'src/img',
+          dest: 'dist/img'
+        }]
+      },
+
+      carousel: {
+        options: {
+          engine: 'im',
+          sizes: [{
+            height: 800,
+            quality: 75,
+            sharpen: {
+              sigma: 1,
+              radius: 2
+            },
+            rename: false,
+          }, {
+            height: 1280,
+            quality: 75,
+            sharpen: {
+              sigma: 1,
+              radius: 2
+            },
+            rename: false,
+            suffix: '@2x'
+          }]
+        },
+        files: [{
+          expand: true,
+          src: ['*.jpg'],
           cwd: 'src/img',
           dest: 'dist/img'
         }]
@@ -46,7 +81,7 @@ module.exports = function (grunt) {
 
     /* Clear out the images directory if it exists */
     clean: {
-      src: ['dist/']
+      src: ['dist/img/']
     },
 
     imagemin: {

@@ -5,40 +5,57 @@
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+  padding-top: 80px;
 }
 
 main {
   padding-top: 2%;
 }
 
-.text-thin{
-  font-weight: 100;
-}
-
 .text-muted {
   color: #bcbbbb;
-}
-
-.text-super {
-  font-size: 4.285714em;
 }
 
 /****************
  NAVIGATON STYLES
 ****************/
 
-nav .container{
-  border-bottom: thick solid #bcbbbb;
+.navbar {
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  color: black;
 }
 
-.title-logo {
-  max-height: 100%;
-  width: 20%;
-  min-width: 115px;
-  float: left;
+.navbar-fixed-top {
+  padding: 20px 0;
+}
+.navbar-brand {
+  font-size: 2em;
 }
 
+/*********************
+ CAROUSEL IMAGE STYLES
+**********************/
+
+.carousel img {
+  width: auto;
+}
 
 /********************
  FEATURED WORK STYLES
 *********************/
+
+.img-responsive {
+  height: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+
+/**************
+  FOOTER STYLES
+***************/
+
+footer {
+  margin-top: 2%;
+}
