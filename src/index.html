@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Michael Muita - Software Engineer</title>
@@ -25,7 +25,7 @@
       </div>
 
       <div class="collapse navbar-collapse" id="collapse-menu">
-        <a href="https://blog.michaelmuita.me" class="btn btn-warning navbar-btn hidden-xs navbar-right">Blog</a>
+        <a href="https://blog.michaelmuita.me" class="btn btn-warning navbar-btn hidden-xs navbar-right" target="_blank">Blog</a>
         <ul class="nav navbar-nav navbar-right text-center">
           <li>
             <a href="#">Portfolio</a>
@@ -40,11 +40,11 @@
             <a href="#">Contact</a>
           </li>
           <li>
-            <a class="visible-xs blog" href="https://blog.michaelmuita.me">Blog</a>
+            <a class="visible-xs" href="https://blog.michaelmuita.me" target="_blank">Blog</a>
           </li>
-        </ul>
-      </div>
-    </div>
+        </ul><!-- End of Nav list -->
+      </div><!-- End of Collapsible menu -->
+    </div><!-- End of Navigation Container -->
   </nav>
 
   <main class="container">
@@ -62,21 +62,41 @@
       <!-- Slider Content (Wrapper for slides )-->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="img/ocean.jpg"
-          srcset="img/ocean.jpg, img/ocean@2x.jpg 2x"
+          <img
+          sizes="(max-width: 2160px) 100vw, 2160px"
+          src="img/ocean-16_9-w_1080.jpg"
+          srcset="img/ocean-16_9-w_320.jpg 320w,
+                  img/ocean-16_9-w_771.jpg 771w,
+                  img/ocean-16_9-w_1080.jpg 1080w,
+                  img/ocean-16_9-w_1308.jpg 1308w,
+                  img/ocean-16_9-w_1621.jpg 1621w,
+                  img/ocean-16_9-w_2160.jpg 2160w"
           alt="Featured Image">
         </div>
 
         <div class="item">
-          <img src="img/mountain.jpg"
-          srcset="img/mountain.jpg, img/mountain@2x.jpg 2x"
-          alt="Featured Image">
+          <img
+            sizes="(max-width: 2160px) 100vw, 2160px"
+            src="img/mountain-16_9-w_1080.jpg"
+            srcset="img/mountain-16_9-w320.jpg 320w,
+                    img/mountain-16_9-w_771.jpg 771w,
+                    img/mountain-16_9-w_1080.jpg 1080w,
+                    img/mountain-16_9-w_1676.jpg 1676w,
+                    img/mountain-16_9-w_1929.jpg 1929w,
+                    img/mountain-16_9-w_2160.jpg 2160w"
+            alt="Featured Image">
         </div>
 
         <div class="item">
-          <img src="img/sunset.jpg"
-          srcset="img/sunset.jpg, img/sunset@2x.jpg 2x"
-          alt="Featured Image">
+          <img
+              sizes="(max-width: 2160px) 100vw, 2160px"
+              src="img/sunset-16_9-w_1080.jpg"
+              srcset="img/sunset-16_9-w_320.jpg 320w,
+                      img/sunset-16_9-w_761.jpg 761w,
+                      img/sunset-16_9-w_1080.jpg 1080w,
+                      img/sunset-16_9-w_1605.jpg 1605w,
+                      img/sunset-16_9-w_2160.jpg 2160w,"
+              alt="Featured Image">
         </div> <!-- End item -->
       </div><!-- End inner -->
 
@@ -93,9 +113,17 @@
       <strong>Featured Work</strong>
     </h2>
 
-    <section class="row text-center featured-work">
+    <section class="row text-center">
+
       <figure class="col-sm-4">
-        <img class="img-responsive img-rounded" src="img/african-stories.png" srcset="img/african-stories.png, img/african-stories@2x.png 2x" alt="African Stories Website">
+        <img
+          sizes="(max-width: 1042px) 100vw, 1042px"
+          class="img-responsive img-rounded"
+          src="img/african-stories-16_9-w_603.png"
+          srcset="img/african-stories-16_9-w_320.png 320w,
+                  img/african-stories-16_9-w_603.png 603w,
+                  img/african-stories-16_9-w_1042.png 1042w,"
+          alt="African Stories Website">
         <figcaption>
           <h3 class="text-uppercase">African Short Stories</h3>
           <a href="https://github.com/modomodo/African-Short-Stories">
@@ -105,10 +133,15 @@
       </figure>
 
       <figure class="col-sm-4">
-        <img class="img-responsive img-rounded"
-        src="img/ribbit-design-page.png"
-        srcset="img/ribbit-design-page.png, img/ribbit-design-page@2x.png 2x"
-        alt="Ribbit Design Agency Website">
+        <img
+          sizes="(max-width: 1237px) 100vw, 1237px"
+          class="img-responsive img-rounded"
+          src="img/ribbit-design-page-16_9-w_768.png"
+          srcset="img/ribbit-design-page-16_9--w_320.png 320w,
+                  img/ribbit-design-page-16_9-w_768.png 768w,
+                  img/ribbit-design-page-16_9-w_1080.png 1080w,
+                  img/ribbit-design-page-16_9-w_1237.png 1237w,"
+          alt="Ribbit Design Agency Website">
         <figcaption>
           <h3 class="text-uppercase">Ribbit Design Agency</h3>
           <a href="https://github.com/modomodo/ribbit-design-agency">
@@ -118,10 +151,14 @@
       </figure>
 
       <figure class="col-sm-4">
-        <img class="img-responsive img-rounded"
-        src="img/bootstrap-blastoff.png"
-        srcset="img/bootstrap-blastoff.png, img/bootstrap-blastoff@2x.png 2x"
-        alt="Ribbit Design Agency Website">
+        <img
+          sizes="(max-width: 960px) 100vw, 960px"
+          class="img-responsive img-rounded"
+          src="img/bootstrap-blastoff-16_9-w_679.png"
+          srcset="img/bootstrap-blastoff-16_9-w_320.png 320w,
+                  img/bootstrap-blastoff-16_9-w_679.png 679w,
+                  img/bootstrap-blastoff-16_9-w_960.png 960w"
+          alt="Ribbit Design Agency Website">
         <figcaption>
           <h3 class="text-uppercase"> Blasting Off With Bootstrap</h3>
           <a href="https://github.com/modomodo/bootstrap-blastoff">
@@ -129,14 +166,17 @@
           </a>
         </figcaption>
       </figure>
+
     </section>
 
   </main>
 
   <footer class="container">
-    <section class="row">
-      <p class="text-center">Copyright © 2016 | Michael Muita | All Rights Reserved</p>
-    </section>
+    <article class="row">
+      <section class="col-xs-12">
+        <p class="text-center lead">Copyright © 2016 | Michael Muita | All Rights Reserved</p>
+      </section>
+    </article>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

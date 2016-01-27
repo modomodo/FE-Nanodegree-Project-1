@@ -89,15 +89,15 @@ module.exports = function (grunt) {
         options: {
           optimizationLevel: 6,
           svgoPlugins: [{removeViewBox: false}],
-          use: [pngquant({
-            quality: '75'
-          }), jpegtran({
+          use: [
+            pngquant(), 
+            jpegtran({
             progressive: true
           })]
         },
         files: [{
           expand: true,
-          cwd: 'dist/img',
+          cwd: 'src/img', //dist/img to work on resized images
           src: ['**/*.{png,jpg,gif,svg}'],
           dest: 'dist/img/'
         }]
